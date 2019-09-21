@@ -7,6 +7,8 @@ self: super:
         };
     };
 
+    httpshare = self.callPackage ./pkgs/httpshare.nix {};
+
     environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
     };
