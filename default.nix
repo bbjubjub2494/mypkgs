@@ -5,12 +5,14 @@ self: super:
         packageOverrides = self: super: {
             torchsummary = self.callPackage ./pkgs/python/torchsummary.nix {};
             semiphemeral = self.callPackage ./pkgs/python/semiphemeral.nix {};
+            onionshare = self.callPackage ./pkgs/python/onionshare/default.nix {};
         };
     };
 
     httpshare = self.callPackage ./pkgs/httpshare.nix {};
 
     semiphemeral = with self.python3Packages; toPythonApplication semiphemeral;
+    onionshare = with self.python3Packages; toPythonApplication onionshare;
 
     vscode-extensions = with self.vscode-utils; super.vscode-extensions // {
         scala-lang.scala = extensionFromVscodeMarketplace {
