@@ -12,7 +12,15 @@ self: super:
 
     semiphemeral = with self.python3Packages; toPythonApplication semiphemeral;
 
-    environments = {
+    vscode-with-extensions = super.vscode-with-extensions.override {
+        vscode = super.vscodium;
+        vscodeExtensions = with self.vscode-extensions; [
+          bbenoist.Nix
+          vscodevim.vim
+        ];
+    };
+
+      environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
     };
 }
