@@ -6,6 +6,7 @@ self: super:
             torchsummary = self.callPackage ./pkgs/python/torchsummary.nix {};
             semiphemeral = self.callPackage ./pkgs/python/semiphemeral.nix {};
             onionshare = self.callPackage ./pkgs/python/onionshare/default.nix {};
+            flask-httpauth = self.callPackage ./pkgs/python/flask-httpauth.nix {};
         };
     };
 
