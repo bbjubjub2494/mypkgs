@@ -40,6 +40,8 @@ self: super:
         ];
     };
 
+    pass = super.pass.withExtensions ({ pass-otp, ... }: [ pass-otp ]);
+
       environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
     };
