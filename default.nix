@@ -40,8 +40,6 @@ self: super:
         ];
     };
 
-    pass = super.pass.withExtensions ({ pass-otp, ... }: [ pass-otp ]);
-
     mars-simulator = self.callPackage ./pkgs/mars-simulator.nix {};
 
       environments = {
