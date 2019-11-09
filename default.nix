@@ -42,6 +42,8 @@ self: super:
 
     pass = super.pass.withExtensions ({ pass-otp, ... }: [ pass-otp ]);
 
+    mars-simulator = self.callPackage ./pkgs/mars-simulator.nix {};
+
       environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
     };
