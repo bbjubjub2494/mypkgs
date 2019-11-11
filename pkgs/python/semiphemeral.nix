@@ -12,15 +12,18 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Automatically delete your old tweets, except for the ones you want to keep";
+    longDescription = ''
+    There are plenty of tools that let you make your Twitter feed ephemeral,
+    automatically deleting tweets older than some threshold, like one month.
+
+    Semiphemeral does this, but also lets you automatically exclude tweets
+    based on criteria: how many RTs or likes they have, and if they're part
+    of a thread where one of your tweets has that many RTs or likes. It also
+    lets you manually select tweets you'd like to exclude from deleting.
+    '';
+
     homepage = https://micahflee.com/2019/06/semiphemeral-automatically-delete-your-old-tweets-except-for-the-ones-you-want-to-keep/;
+
     license = licenses.mit;
-    maintainers = [
-      {
-        name = "Micah Lee";
-        email = "micah@micahflee.com";
-        github = "micahflee";
-        githubId = 156128;
-      }
-    ];
   };
 }
