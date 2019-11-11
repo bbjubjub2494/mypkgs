@@ -1,4 +1,10 @@
-{ stdenv, lib, fetchurl, openjdk11, makeWrapper }:
+{
+  stdenv,
+  fetchurl,
+  openjdk11,
+  makeWrapper,
+}:
+
 stdenv.mkDerivation {
   pname = "mars-simulator";
   version = "4.5";
@@ -7,7 +13,10 @@ stdenv.mkDerivation {
     url = "http://courses.missouristate.edu/KenVollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar";
     sha256 = "ac340b676ba2b62246b9df77e62f81ad4447bcfd329ab539716bcd09950b7096";
   };
-  buildInputs = [openjdk11 makeWrapper];
+  buildInputs = [
+    openjdk11
+    makeWrapper
+  ];
 
   phases = "installPhase";
   installPhase = ''
