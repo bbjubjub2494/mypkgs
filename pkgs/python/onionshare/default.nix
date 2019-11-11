@@ -1,4 +1,4 @@
-{ lib, buildPythonPackage, fetchFromGitHub, flask, flask-httpauth, stem, pyqt5, pycrypto, pysocks, gnome3, pytest, httpauth, requests, tor, obfs4 }:
+{ lib, buildPythonPackage, fetchFromGitHub, flask, stem, pyqt5, pycrypto, pysocks, pytest, tor, obfs4, }:
 
 buildPythonPackage {
   pname = "onionshare";
@@ -10,7 +10,7 @@ buildPythonPackage {
     sha256 = "1lx21p12888qnbhsyin4lrnn4xizb39ldk77r71y53hn8mfxi54z";
   };
 
-  propagatedBuildInputs = [ flask flask-httpauth stem pyqt5 pycrypto pysocks gnome3.nautilus httpauth requests ];
+  propagatedBuildInputs = [ flask stem pyqt5 pycrypto pysocks ];
   buildInputs = [ tor obfs4 ];
   checkInputs = [ pytest ];
 
