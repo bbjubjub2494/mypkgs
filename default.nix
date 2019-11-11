@@ -4,16 +4,11 @@ self: super:
     python3 = super.python3.override {
         packageOverrides = self: super: {
             torchsummary = self.callPackage ./pkgs/python/torchsummary.nix {};
-            semiphemeral = self.callPackage ./pkgs/python/semiphemeral.nix {};
-            onionshare = self.callPackage ./pkgs/python/onionshare/default.nix {};
             flask-httpauth = self.callPackage ./pkgs/python/flask-httpauth.nix {};
         };
     };
 
     httpshare = self.callPackage ./pkgs/httpshare.nix {};
-
-    semiphemeral = with self.python3Packages; toPythonApplication semiphemeral;
-    onionshare = with self.python3Packages; toPythonApplication onionshare;
 
     vscode-extensions = with self.vscode-utils; super.vscode-extensions // {
         scala-lang.scala = extensionFromVscodeMarketplace {
@@ -39,8 +34,6 @@ self: super:
           lampepfl.dotty
         ];
     };
-
-    mars-simulator = self.callPackage ./pkgs/mars-simulator.nix {};
 
       environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
