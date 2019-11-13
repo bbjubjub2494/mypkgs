@@ -35,6 +35,11 @@ self: super:
         ];
     };
 
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      pkgs = self;
+      repoOverrides.lourkeur = import ../nur-expressions;
+    };
+
       environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
     };
