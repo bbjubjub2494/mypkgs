@@ -34,10 +34,17 @@ self: super:
         ];
     };
 
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      pkgs = self;
-      repoOverrides.lourkeur = import ../nur-expressions;
-    };
+    nur =
+      let
+        nur-source = builtins.fetchTarball {
+          url = "https://github.com/nix-community/nur-combined/archive/a9182c53221855ba3614c529e99b2dceea7329b8.tar.gz";
+          sha256 = "12h964822j3d7xdq9lx22h74qp6wvzhjibi4hppy0lnnppaxqhqw";
+        };
+      in
+      import nur-source {
+        pkgs = self;
+        repoOverrides.lourkeur = import ../nur-expressions;
+      };
 
       environments = {
         jupyter-cs233 = self.callPackage ./environments/jupyter-cs233.nix {};
