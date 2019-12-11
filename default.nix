@@ -34,6 +34,8 @@ self: super:
         ];
     };
 
+    git-with-tools = with self.gitAndTools; [ git git-absorb git-subrepo delta tig ];
+
     nur =
       let
         nur-source = builtins.fetchTarball {
