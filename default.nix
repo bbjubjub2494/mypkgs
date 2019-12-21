@@ -24,8 +24,8 @@ self: super:
           };
     };
 
+    vscode = self.vscodium;
     vscode-with-extensions = super.vscode-with-extensions.override {
-        vscode = super.vscodium;
         vscodeExtensions = with self.vscode-extensions; [
           bbenoist.Nix
           vscodevim.vim
