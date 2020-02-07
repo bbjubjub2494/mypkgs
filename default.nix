@@ -36,6 +36,7 @@ self: super:
           bbenoist.Nix
           vscodevim.vim
           scala-lang.scala
+          scalameta.metals
           lampepfl.dotty
           vinrobot.vhdl-formatter
         ];
