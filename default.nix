@@ -16,6 +16,12 @@ self: super:
             version = "0.3.8";
             sha256 = "17dl10m3ayf57sqgil4mr9fjdm7i8gb5clrs227b768pp2d39ll9";
           };
+        vinrobot.vhdl-formatter = extensionFromVscodeMarketplace {
+            name = "vhdl-formatter";
+            publisher = "vinrobot";
+            version = "1.0.4";
+            sha256 = "115bsbfkrzk9n2018r1gm3cbird81cbk6n2dqd71xybiv8xib8c1";
+          };
         lampepfl.dotty = extensionFromVscodeMarketplace {
             name = "dotty";
             publisher = "lampepfl";
@@ -31,6 +37,7 @@ self: super:
           vscodevim.vim
           scala-lang.scala
           lampepfl.dotty
+          vinrobot.vhdl-formatter
         ];
     };
 
